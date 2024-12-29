@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Giuseppe Sabia</title>
+    <!-- Bootswatch Darkly CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Giuseppe Sabia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Chi Sono</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Esperienza</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Progetti Universitari</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#other">Altro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1>Benvenuto nel mio Portfolio</h1>
+            <p class="lead">Scopri i miei progetti, le mie esperienze e competenze.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="about" class="mb-5">
+            <h2>Chi Sono</h2>
+            <p>
+                Sono un neolaureato in Informatica con esperienza nello sviluppo web. 
+                Mi appassionano il problem solving e l'implementazione di soluzioni innovative. 
+                Questo portfolio mette in mostra i miei progetti e competenze tecniche.
+            </p>
+            <button type="button" class="btn btn-primary" onclick="downloadCV()">Scarica il mio CV</button>
+        </section>
+
+        <section id="experince" class="mb-5">
+            <h2>Esperienza Lavorativa</h2>
+            <div class="row">
+                <div class="card text-white bg-secondary mb-3">
+                <div class="card-body">
+                <h5 class="card-title">Web developer</h5>
+                <h8 class = "card-text">Presso: <img src="inreception.png" alt="inReception" style="width: 150px; height: auto;"> </h8>
+                <h8 class = "card-text">Periodo: 3 mesi</h8>
+                <h8 class = "card-text">Link</h8> href
+                <h5 class = "card-text">Linguaggi utilizzati:</h5>
+                <div>
+                    <img src = "Tirocinio/css.png" alt = "css" style="width: 10%; height: auto;">
+                    <img src = "Tirocinio/php.png" alt = "php" style="width: 15%; height: auto;">
+                    <img src = "Tirocinio/html.png" alt = "html" style="width: 9%; height: auto;">
+                    <img src = "Tirocinio/curl.png" alt = "curl" style="width: 15%; height: auto;">
+                    <img src = "Tirocinio/javascript.png" alt = "javascript" style="width: 10%; height: auto;">
+                </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-5">
+            <h2>Progetti</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-secondary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Progetto 1</h5>
+                            <p class="card-text">Descrizione del progetto: un'app web per la gestione di eventi.</p>
+                            <a href="https://github.com/username/progetto1" class="btn btn-primary">Vedi su GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-secondary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Progetto 2</h5>
+                            <p class="card-text">Descrizione del progetto: un'API per il tracciamento delle attività.</p>
+                            <a href="https://github.com/username/progetto2" class="btn btn-primary">Vedi su GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-secondary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Progetto 3</h5>
+                            <p class="card-text">Descrizione del progetto: un sito e-commerce responsive.</p>
+                            <a href="https://github.com/username/progetto3" class="btn btn-primary">Vedi su GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contatti</h2>
+            <p>Sentiti libero di contattarmi per collaborazioni o domande.</p>
+            <ul class="list-unstyled">
+                <li>Email: <a href="mailto:giusaff99@gmail.com">giusaff99@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/username">github.com/username</a></li>
+                <li>Telefono: +39 3466863409</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; .</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript Bundle -->
+
+
+
+    <script>
+        function downloadCV() {
+            const link = document.createElement('a');
+            link.href = 'curriculumdef.pdf'; // Percorso del file CV
+            link.download = 'curriculumdef.pdf'; // Nome del file scaricato
+            link.click();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
