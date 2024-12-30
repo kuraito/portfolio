@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <style>
-                .btn-primary {
+         body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .btn-primary {
             padding: 10px 20px;
             background-color: #007bff;
             color: white;
@@ -16,14 +21,22 @@
         }
 
         .course-list {
-            display: none; /* Nascosta inizialmente */
+            max-height: 0; /* Altezza iniziale 0 (nascosta) */
+            overflow: hidden; /* Nasconde i contenuti */
+            transition: max-height 0.5s ease, opacity 0.5s ease; /* Animazione fluida */
+            opacity: 0; /* Invisibile inizialmente */
             margin-top: 20px;
-            padding-left: 20px;
             list-style-type: disc;
+            padding-left: 20px;
         }
 
         .course-list.visible {
-            display: block; /* Mostra la lista quando visibile */
+            max-height: 500px; /* Altezza massima sufficiente per mostrare tutti gli elementi */
+            opacity: 1; /* Visibile */
+        }
+
+        .course-list li {
+            padding: 5px 0;
         }
         
         .zoom-img {
