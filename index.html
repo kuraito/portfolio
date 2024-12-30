@@ -13,20 +13,13 @@
             transform: scale(1.5);
         }
 
-        .course-list {
-            max-height: 0; /* Altezza iniziale 0 */
-            overflow: hidden; /* Nasconde il contenuto quando max-height è 0 */
-            transition: max-height 0.5s ease; /* Animazione fluida */
-            list-style-type: disc;
-            padding-left: 20px;
+                .dropdown {
+            margin: 20px;
+            position: relative;
         }
 
-        .course-list.visible {
-            max-height: 300px; /* Altezza massima (sufficiente per mostrare tutti i corsi) */
-        }
-
-        .btn {
-            padding: 10px 15px;
+        .dropdown-button {
+            padding: 10px 20px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -34,8 +27,46 @@
             cursor: pointer;
         }
 
-        .btn:hover {
+        .dropdown-button:hover {
             background-color: #0056b3;
+        }
+
+        .dropdown-content {
+            display: none; /* Nasconde il contenuto inizialmente */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+            width: 200px;
+        }
+
+        .dropdown-content.visible {
+            display: block; /* Mostra il contenuto */
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-content li {
+            padding: 8px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content li:hover {
+            background-color: #f5f5f5;
         }
     </style>
     <meta charset="UTF-8">
@@ -114,16 +145,15 @@
                             <p class = "card-text">Presso: Università degli studi di Salerno></p>
                             <p class = "card-text">Periodo: 2019-2024</p>
                             <button class="btn btn-primary" onclick="toggleList()" >Mostra Corsi</button>
-                            <?php
-                            // Array di corsi
-                            $corsi = ["HTML e CSS", "JavaScript", "PHP", "Python", "React"];
-                            ?>
-
-                            <ul class="course-list" id="courseList">
-                                <?php foreach ($corsi as $corso): ?>
-                                <li><?= $corso; ?></li>
-                                <?php endforeach; ?>
+                            <div class="dropdown-content" id="dropdownContent">
+                            <ul>
+                                <li>HTML e CSS</li>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>PHP</li>
+                                <li>React</li>
                             </ul>
+                            </div>
 
 
                         </div>
@@ -243,9 +273,9 @@
 
 
     <script>
-        function toggleList() {
-            const courseList = document.getElementById('courseList');
-            courseList.classList.toggle('visible'); // Aggiunge/rimuove la classe 'visible'
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdownContent");
+            dropdown.classList.toggle("visible");
         }
 
         function downloadCV() {
